@@ -12,6 +12,14 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 int main(void)
 {
-    printf("Size of int is %lu\n", sizeof(int));
+    int p1 = 1, p2 = 1, new, sum = 0;
+    while(new <= 4000000){
+        new = p1 + p2;
+        p1 = p2;
+        p2 = new;
+        if (new % 2 == 0)
+            sum += new;
+    }
+    printf("The sum of even valued Fibonacci numbers below 4 million is %d\n", sum);
     return 0;
 }
